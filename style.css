@@ -1,0 +1,458 @@
+/* Modern Evergreen Jim Corbett Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #ff9800;
+  transform: translateY(-2px);
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+nav {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #1b5e3f 0%, #2e8b57 100%);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin-left: 32px;
+}
+nav ul li a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff9800;
+  transition: width 0.3s ease;
+}
+nav ul li a:hover {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ffc107;
+}
+nav ul li a:hover::before {
+  width: 100%;
+}
+.hero {
+  min-height: 80vh;
+  background: linear-gradient(135deg, rgba(30, 60, 50, 0.7), rgba(46, 139, 87, 0.7)), url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&w=1200&q=80') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  animation: slideInDown 0.8s ease;
+}
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero h1 {
+  font-size: 4em;
+  margin-bottom: 16px;
+  text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 0.8s ease 0.2s both;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.hero p {
+  font-size: 1.6em;
+  margin-bottom: 28px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.8s ease 0.4s both;
+  font-weight: 300;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero button {
+  padding: 16px 40px;
+  border: none;
+  background: linear-gradient(135deg, #ff9800, #ff6f00);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: 1.2em;
+  box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
+  animation: fadeInUp 0.8s ease 0.6s both;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.hero button:hover {
+  background: linear-gradient(135deg, #ff6f00, #e65100);
+  box-shadow: 0 12px 30px rgba(255, 152, 0, 0.6);
+  transform: translateY(-2px);
+}
+section {
+  padding: 80px 20px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#about h2, #safari h2, #resorts h2, #gallery h2, #contact h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  color: #1b5e3f;
+  font-size: 2.8em;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 20px;
+}
+#about h2::after, #safari h2::after, #resorts h2::after, #gallery h2::after, #contact h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2e8b57, #ff9800);
+  border-radius: 2px;
+}
+#about p {
+  line-height: 1.8;
+  margin-bottom: 18px;
+  font-size: 1.1em;
+}
+.safari-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+}
+.card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 320px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2e8b57, #ff9800);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.card:hover::before {
+  opacity: 1;
+}
+.card img {
+  height: 210px;
+  object-fit: cover;
+  border-radius: 0 0 12px 12px;
+}
+.card-content {
+  padding: 20px 18px 18px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-content h3 {
+  margin-bottom: 12px;
+  color: #256d4a;
+}
+.card-content p {
+  margin-bottom: 14px;
+  color: #444;
+}
+.card-content button {
+  background: linear-gradient(135deg, #2e8b57, #1b5e3f);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1em;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card-content button:hover {
+  background: linear-gradient(135deg, #ff9800, #ff6f00);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
+}
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.package-card {
+    background: #f4f8f4;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    padding: 24px 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.package-card h3 {
+    margin: 0 0 8px 0;
+    color: #2e7d32;
+}
+
+.package-card p {
+    font-size: 1rem;
+    margin-bottom: 14px;
+}
+
+.package-card .cta-btn {
+    margin-top: auto;
+}
+
+.package-photo {
+    width: 100%;
+    max-width: 220px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    min-height: 100px;
+}
+.resort-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+.resort-gallery img {
+  width: 340px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.resort-gallery img:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.gallery-grid img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+  padding: 40px 32px 32px 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  border: 1px solid rgba(46, 139, 87, 0.1);
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  font-size: 1em;
+  background: #fff;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  border: 2px solid #2e8b57;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.1);
+  transform: translateY(-2px);
+}
+.contact-form button {
+  background: linear-gradient(135deg, #2e8b57, #1b5e3f);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  box-shadow: 0 6px 20px rgba(46, 139, 87, 0.3);
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.contact-form button:hover {
+  background: linear-gradient(135deg, #ff9800, #ff6f00);
+  box-shadow: 0 10px 30px rgba(255, 152, 0, 0.4);
+  transform: translateY(-2px);
+}
+footer {
+  background: linear-gradient(135deg, #1b5e3f 0%, #2e8b57 100%);
+  color: #fff;
+  text-align: center;
+  padding: 40px 0 20px 0;
+  font-size: 1.1em;
+  border-radius: 32px 32px 0 0;
+  margin-top: 60px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+}
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+  }
+  50% {
+    box-shadow: 0 8px 35px rgba(37, 211, 102, 0.5);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+  }
+}
+.whatsapp-float:hover {
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+  transform: scale(1.1) translateY(-3px);
+}
+@media (max-width: 900px) {
+  .safari-cards, .resort-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav {
+    flex-direction: column;
+    padding: 14px 10px;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+  nav ul li {
+    margin: 10px 0 0 0;
+  }
+}
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+  .container {
+    padding: 0 6px;
+  }
+  .card, .resort-gallery img {
+    width: 100%;
+    min-width: 0;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

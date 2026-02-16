@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay - Evergreen Jim Corbett</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .booking-container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ff9800;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .submit-btn {
+            padding: 15px;
+            background: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .submit-btn:hover {
+            background: #ff8c00;
+            transform: scale(1.02);
+        }
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .booking-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .booking-header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .form-success {
+            display: none;
+            padding: 20px;
+            background: #d4edda;
+            border: 2px solid #28a745;
+            border-radius: 5px;
+            color: #155724;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <span style="display:inline-block; background:rgba(255,255,255,0.0); border-radius:50%; padding:0;">
+        <img src="images/logoo.png" alt="Jim Corbett Logo" width="48" height="48" style="background:transparent;" class="rounded-circle border border-light shadow-sm">
+      </span>
+      <span class="fw-bold fs-4">Evergreen Jim Corbett</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+  <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+  <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
+  <li class="nav-item"><a class="nav-link" href="pages/gallery.html">Gallery</a></li>
+  <li class="nav-item"><a class="nav-link" href="pages/nainital.html">Nainital</a></li>
+  <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="booking-container">
+        <div class="booking-header">
+            <h1> Book Your Safari Experience</h1>
+            <p>Fill in your details to reserve your spot at Evergreen Jim Corbett</p>
+        </div>
+
+        <div class="form-success" id="successMessage">
+            <h3>✓ Booking Request Submitted!</h3>
+            <p>Thank you! We'll contact you shortly to confirm your booking.</p>
+        </div>
+
+        <form class="booking-form" id="bookingForm" action="https://formspree.io/f/xyzpqwer" method="POST">
+            <!-- Note: Replace xyzpqwer with your FormSpree Form ID from https://formspree.io -->
+            
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Number of Guests *</label>
+                <select id="guests" name="guests" required>
+                    <option value="">-- Select --</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6+">6+ Guests</option>
+                </select>
+            </div>
+
+            <fieldset>
+                <legend style="font-weight: 600; margin-bottom: 15px;">Check-in Date *</legend>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkinMonth">Month</label>
+                        <select id="checkinMonth" name="checkinMonth" required>
+                            <option value="">-- Month --</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkinDate">Date</label>
+                        <input type="number" id="checkinDate" name="checkinDate" min="1" max="31" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend style="font-weight: 600; margin-bottom: 15px;">Check-out Date *</legend>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkoutMonth">Month</label>
+                        <select id="checkoutMonth" name="checkoutMonth" required>
+                            <option value="">-- Month --</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutDate">Date</label>
+                        <input type="number" id="checkoutDate" name="checkoutDate" min="1" max="31" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="message">Special Requests (Optional)</label>
+                <textarea id="message" name="message" placeholder="Share any special requests or preferences..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">📧 Submit Booking Request</button>
+        </form>
+    </div>
+
+    <footer style="background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px;">
+        <p>&copy; 2024 Evergreen Jim Corbett Safari & Resorts. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple form handling for static submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            // Allow default form submission to Formspree
+            // The form will submit and redirect back
+        });
+    </script>
+</body>
+</html>
